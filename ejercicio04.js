@@ -50,7 +50,7 @@ function arraySplicer(array, text) {
     array.splice(arrayIndex, 1)
     return array
   } else {
-    return 'El elemento no se encuentra en la lista. Aquí tienes el array original'
+    return 'El elemento no se encuentra en la lista.'
   }
 }
 
