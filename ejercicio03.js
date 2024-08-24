@@ -62,7 +62,8 @@ const users2 = [
     favoritesSounds: {
       wind: { format: 'mp3', volume: 55 },
       stream: { format: 'ogg', volume: 50 },
-      fireplace: { format: 'mp3', volume: 75 }
+      fireplace: { format: 'mp3', volume: 75 },
+      river: { format: 'mp3', volume: 65 }
     }
   },
   {
@@ -70,16 +71,26 @@ const users2 = [
     favoritesSounds: {
       cityAmbience: { format: 'mp3', volume: 35 },
       rain: { format: 'ogg', volume: 65 },
-      waves: { format: 'mp3', volume: 60 }
+      waves: { format: 'mp3', volume: 60 },
+      ocean: { format: 'mp3', volume: 70 }
     }
   }
 ]
 
 function favoriteSoundCounter(list) {
-  const sounds = []
-  let counter = 0
-  for (const user in list) {
+  const soundCounter = {}
+  for (const user of list) {
     for (const sound in user.favoritesSounds) {
+      if (soundCounter[sound]) {
+        soundCounter[sound]++
+      } else {
+        soundCounter[sound] = 1
+      }
     }
   }
+
+  return soundCounter
 }
+
+console.log(favoriteSoundCounter(users))
+console.log(favoriteSoundCounter(users2))
