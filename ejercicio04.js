@@ -23,6 +23,9 @@ const subjects = [
   'Música'
 ]
 
+//creo la variable error para llamarla en caso de que el elemento no exista
+const error = 'El elemento no existe en la lista'
+
 function findArrayIndex(array, text) {
   for (let i = 0; i < array.length; i++) {
     const element = array[i]
@@ -31,7 +34,7 @@ function findArrayIndex(array, text) {
     }
   }
   // si no está en el array
-  return -1
+  return error
 }
 
 console.log(findArrayIndex(mainCharacters, 'Han Solo'))
@@ -46,11 +49,11 @@ De nuevo haz varios ejemplos para practicar y comprueba que funcionan correctame
 
 function arraySplicer(array, text) {
   const arrayIndex = findArrayIndex(array, text)
-  if (arrayIndex !== -1) {
+  if (arrayIndex !== error) {
     array.splice(arrayIndex, 1)
     return array
   } else {
-    return 'El elemento no se encuentra en la lista.'
+    return error
   }
 }
 
