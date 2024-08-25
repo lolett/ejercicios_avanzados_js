@@ -27,8 +27,7 @@ const movies = [
   }
 ]
 
-// Este es otro array para comprobar funcionalidad de la función
-
+// Este es otro array para comprobar funcionalidad
 const movies2 = [
   {
     title: 'Galactic Odyssey: Rise of the Nova',
